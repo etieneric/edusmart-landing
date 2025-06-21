@@ -70,22 +70,29 @@
       padding: 20px;
       max-width: 300px;
       text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
     }
     .feature h3 {
       color: #ffb703;
     }
-    .cta {
-      display: block;
-      margin: 40px auto;
-      padding: 15px 30px;
-      font-size: 1rem;
-      background: #ffb703;
-      color: #001d3d;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
+    .feature:nth-child(2) { animation-delay: 0.2s; }
+    .feature:nth-child(3) { animation-delay: 0.4s; }
+    .feature:nth-child(4) { animation-delay: 0.6s; }
+    .feature:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .contact {
       background: #001d3d;
       padding: 40px 20px;
@@ -101,7 +108,7 @@
       margin: 0 auto;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease-out 1s forwards;
+      animation: fadeInUpForm 1s ease-out 1s forwards;
     }
     .contact input,
     .contact textarea {
@@ -125,32 +132,18 @@
       font-size: 0.9rem;
       color: #90e0ef;
     }
-    .feature {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  .feature:nth-child(2) { animation-delay: 0.2s; }
-  .feature:nth-child(3) { animation-delay: 0.4s; }
-  .feature:nth-child(4) { animation-delay: 0.6s; }
-  .feature:nth-child(5) { animation-delay: 0.8s; }
 
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
+    @keyframes fadeInUpForm {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  }
+  </style>
   <script>
     function switchLanguage(lang) {
       const en = document.querySelectorAll('[lang="en"]');
@@ -215,23 +208,22 @@
   </section>
 
   <section class="contact" id="contact">
-  <h2>Contact & Support</h2>
-  <p>Une question ? Un besoin d’assistance ? Contacte-nous directement :</p>
-  <form action="https://formspree.io/f/mayrkkwe" method="POST">
-    <input type="text" name="name" placeholder="Full Name / Nom complet" required />
-    <input type="email" name="email" placeholder="Email Address / Adresse e-mail" required />
-    <textarea name="message" placeholder="Your message / Votre message..." rows="5" required></textarea>
+    <h2>Contact & Support</h2>
+    <p>Une question ? Un besoin d’assistance ? Contacte-nous directement :</p>
+    <form action="https://formspree.io/f/mayrkkwe" method="POST">
+      <input type="text" name="name" placeholder="Full Name / Nom complet" required />
+      <input type="email" name="email" placeholder="Email Address / Adresse e-mail" required />
+      <textarea name="message" placeholder="Your message / Votre message..." rows="5" required></textarea>
+      <label style="margin: 10px 0; text-align: left; color: #fff; font-size: 0.9rem;">
+        <input type="checkbox" name="affichage_feedback" value="oui" />
+        Je souhaite que ce message apparaisse comme témoignage public / I want this message to appear as public feedback
+      </label>
+      <button type="submit">Send / Envoyer</button>
+    </form>
+  </section>
 
-    <!-- ✅ Case à cocher ajoutée -->
-    <label style="margin: 10px 0; text-align: left; color: #fff; font-size: 0.9rem;">
-      <input type="checkbox" name="affichage_feedback" value="oui" />
-      Je souhaite que ce message apparaisse comme témoignage public / I want this message to appear as public feedback
-    </label>
-
-    <button type="submit">Send / Envoyer</button>
-  </form>
-</section>
-
-<footer>
-  © 2025 EduSmart Cameroon – by @Menana
-</footer>
+  <footer>
+    © 2025 EduSmart Cameroon – by @Menana
+  </footer>
+</body>
+</html>
