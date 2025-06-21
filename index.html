@@ -4,5 +4,207 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EduSmart Cameroon</title>
-  ...
+  <base href="/edusmart-landing/">
+</head>
+<body>
+  <div class="notification-banner">
+    <span class="banner-text">📢 Jules: "EduSmart really helped me succeed in my exams!" • Amina: "Merci à EduSmart, j’ai eu mon BEPC avec mention !" • Bryan: "My child’s progress has improved significantly thanks to EduSmart."</span>
+  </div>
+  <div class="lang-switch">
+    <button onclick="switchLanguage('en')">EN</button>
+    <button onclick="switchLanguage('fr')">FR</button>
+  </div>
+
+  <header>
+    <h1 lang="en">EduSmart Cameroon</h1>
+    <h1 lang="fr">EduSmart Cameroun</h1>
+    <p lang="en">Learn today, succeed tomorrow</p>
+    <p lang="fr">Apprendre aujourd'hui, réussir demain</p>
+    <a href="#contact" class="cta" lang="en">Discover the platform</a>
+    <a href="#contact" class="cta" lang="fr">Découvrir la plateforme</a>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <h3 lang="en">Interactive Lessons</h3>
+      <h3 lang="fr">Cours interactifs</h3>
+      <p lang="en">Curriculum-aligned content, accessible anytime, anywhere.</p>
+      <p lang="fr">Contenus alignés au programme camerounais, accessibles à tout moment.</p>
+    </div>
+    <div class="feature">
+      <h3 lang="en">Tests & Exams</h3>
+      <h3 lang="fr">Tests & Examens</h3>
+      <p lang="en">MCQs, past exam papers, automatic corrections and detailed results.</p>
+      <p lang="fr">QCM, anciens sujets officiels, corrigés automatiques et résultats détaillés.</p>
+    </div>
+    <div class="feature">
+      <h3 lang="en">Virtual Classroom</h3>
+      <h3 lang="fr">Classe virtuelle</h3>
+      <p lang="en">Live sessions with your teachers on any device.</p>
+      <p lang="fr">Sessions en direct avec vos enseignants depuis n'importe quel appareil.</p>
+    </div>
+    <div class="feature">
+      <h3 lang="en">Progress Tracking</h3>
+      <h3 lang="fr">Suivi & progression</h3>
+      <p lang="en">Personalized statistics for every student, teacher and parent.</p>
+      <p lang="fr">Statistiques personnalisées pour chaque élève, enseignant et parent.</p>
+    </div>
+    <div class="feature">
+      <h3 lang="en">Smart Chatbot</h3>
+      <h3 lang="fr">Chatbot éducatif</h3>
+      <p lang="en">Ask your question, the EduSmart coach answers instantly!</p>
+      <p lang="fr">Pose ta question, le coach EduSmart te répond en temps réel !</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact & Support</h2>
+    <p>Une question ? Un besoin d’assistance ? Contacte-nous directement :</p>
+    <form action="https://formspree.io/f/mayrkkwe" method="POST">
+      <input type="text" name="name" placeholder="Full Name / Nom complet" required />
+      <input type="email" name="email" placeholder="Email Address / Adresse e-mail" required />
+      <textarea name="message" placeholder="Your message / Votre message..." rows="5" required></textarea>
+      <label style="margin: 10px 0; text-align: left; color: #fff; font-size: 0.9rem;">
+        <input type="checkbox" name="affichage_feedback" value="oui" />
+        Je souhaite que ce message apparaisse comme témoignage public / I want this message to appear as public feedback
+      </label>
+      <button type="submit">Send / Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 EduSmart Cameroon – by @Menana
+  </footer>
+
+  <script>
+    function switchLanguage(lang) {
+      const en = document.querySelectorAll('[lang="en"]');
+      const fr = document.querySelectorAll('[lang="fr"]');
+      en.forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+      fr.forEach(e => e.style.display = lang === 'fr' ? 'block' : 'none');
+    }
+    window.onload = () => {
+      switchLanguage('en');
+    };
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #002244, #0077b6);
+      color: white;
+    }
+    .notification-banner {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffb703;
+      color: #001d3d;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      z-index: 9999;
+    }
+    .banner-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollText 20s linear infinite;
+    }
+    @keyframes scrollText {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+    header {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #a8dadc;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switch button {
+      background: #ffb703;
+      color: #001d3d;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+    }
+    .feature h3 {
+      color: #ffb703;
+    }
+    .cta {
+      display: block;
+      margin: 40px auto;
+      padding: 15px 30px;
+      font-size: 1rem;
+      background: #ffb703;
+      color: #001d3d;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .contact {
+      background: #001d3d;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      color: #ffb703;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .contact input,
+    .contact textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact button {
+      padding: 10px;
+      background: #ffb703;
+      color: #001d3d;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #001d3d;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #90e0ef;
+    }
+  </style>
+</body>
 </html>
